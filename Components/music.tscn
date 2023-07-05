@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c02dck6idwfk4"]
+
+[ext_resource type="AudioStream" uid="uid://51agdjha5s8l" path="res://Audio/Mind-Bender.mp3" id="1_gxyev"]
+
+[node name="MusicController" type="Node"]
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gxyev")

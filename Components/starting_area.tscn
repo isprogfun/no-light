@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7os0rjnsop37"]
+
+[ext_resource type="Texture2D" uid="uid://ch8g21vd0ohn0" path="res://Assets/Art/door.png" id="1_tbbkn"]
+
+[node name="StartingArea" type="Area2D"]
+position = Vector2(175, 848)
+scale = Vector2(3, 3)
+collision_layer = 4
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(0, -5.33331)
+texture = ExtResource("1_tbbkn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -5.33331)
+polygon = PackedVector2Array(16, 32, -16, 32, -16, -32, 16, -32)

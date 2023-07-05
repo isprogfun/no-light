@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ct8oaedxef61s"]
+
+[ext_resource type="FontFile" uid="uid://cc0rbd27iod0f" path="res://Assets/Fonts/BebasNeue-Regular.ttf" id="1_ge2eu"]
+
+[resource]
+default_font = ExtResource("1_ge2eu")
+default_font_size = 30

@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyeia8fei7li6"]
+
+[ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_pyod7"]
+[ext_resource type="Theme" uid="uid://ct8oaedxef61s" path="res://UI/UI_theme.tres" id="2_mht2m"]
+[ext_resource type="FontFile" uid="uid://cc0rbd27iod0f" path="res://Assets/Fonts/BebasNeue-Regular.ttf" id="2_pbng7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7scp"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_ujf67"]
+default_font = ExtResource("2_pbng7")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pyod7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Title" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.941176, 0.458824, 1)
+theme_override_fonts/font = ExtResource("2_pbng7")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_d7scp")
+text = "No Light"
+vertical_alignment = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = SubResource("Theme_ujf67")
+
+[node name="StartButton" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+theme = ExtResource("2_mht2m")
+text = "Start game"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/Buttons"]
+layout_mode = 2
+theme = ExtResource("2_mht2m")
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
