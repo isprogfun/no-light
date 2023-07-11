@@ -17,7 +17,7 @@ signal failure
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var root = get_tree().root
-	var levels = Array(DirAccess.get_files_at("res://Scenes/Levels")).filter(func(file): return file.get_extension() == "tscn")
+	var levels = Array(DirAccess.get_files_at("res://Scenes/Levels"))
 
 	number_of_levels = levels.size()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -36,7 +36,7 @@ func go_to_next_level():
 	current_level += 1
 	
 	if current_level == 1:
-		MusicController.get_node("Background").play()
+		MusicController.get_node("Background").play();
 	
 	if number_of_levels < current_level:
 		emit_signal("success")

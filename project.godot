@@ -35,4 +35,5 @@ window/vsync/vsync_mode=0
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.362829, 0.362829, 0.362829, 1)

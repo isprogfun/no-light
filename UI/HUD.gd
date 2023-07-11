@@ -3,14 +3,16 @@ extends CanvasLayer
 var level_label
 var container
 var text_label
-var health_label
+var health_bar
+var heart
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	level_label = get_node("LevelLabel")
 	container = get_node("Container")
 	text_label = container.get_node("Label")
-	health_label = get_node("HealthLabel")
+	health_bar = get_node("HealthBar")
+	heart = health_bar.get_node("Heart")
 
 	container.hide()
 
@@ -22,12 +24,10 @@ func _ready():
 	Global.connect("failure", _on_failure)
 
 func _show_lives():
-	var text = ""
-	
 	for i in range(Global.number_of_lives):
-		text = text + "♥"
-
-	health_label.text = text
+		var newHeart = heart.duplicate()
+		newHeart.show()
+		health_bar.add_child(newHeart)
 
 func set_mode(mode):
 	if mode == "entered":
@@ -52,4 +52,3 @@ func _on_main_button_pressed():
 func _on_quit_button_pressed():
 	get_tree().paused = false
 	get_tree().quit()
-
